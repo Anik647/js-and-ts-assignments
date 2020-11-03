@@ -24,30 +24,30 @@ interface Marks {
       this.marks = [];
       this.assignments = [];
     }
-    async addMarks(marks: { subject: string; marks: number }) {
+     addMarks(marks: { subject: string; marks: number }) {
       this.marks.push(marks);
       return marks;
     }
-    async getMarks(subject: string) {
+     getMarks(subject: string) {
       return this.marks.filter((Element) => Element.subject === subject);
     }
-    async addAssignment(assignments: { subject: string; name: string }) {
+     addAssignment(assignments: { subject: string; name: string }) {
       this.assignments.push(assignments);
       return assignments;
     }
-    async getAssignment(subject: string) {
+     getAssignment(subject: string) {
       return this.assignments.filter((Element) => Element.subject === subject);
     }
-    async getAssignmentsCount() {
+     getAssignmentsCount() {
       return this.assignments.filter((Element) => Element.subject).length;
     }
-    async getTotalMarksCount() {
+     getTotalMarksCount() {
      
       return this.marks.map((Element) => Element.marks).reduce((a, b) => a + b);
      
     }
     async displayFullStudentDetailsInHtml() {}
-    async getFailedSubjects() {
+     getFailedSubjects() {
       return this.marks.filter((Element) => Element.marks < 40);
     }
   }
